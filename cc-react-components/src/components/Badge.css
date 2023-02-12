@@ -1,0 +1,26 @@
+#bell {
+	position: absolute;
+}
+
+.bubble {
+	margin-top: 5px;
+	margin-left: 26px;
+	height: 1.1em;
+	width: 1.1em;
+	background-color: gold;
+	border-radius: 10px;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#notification-number {
+	font-size: 0.6rem;
+	color: black;
+}
+
+.badge-container {
+	position: relative;
+	display: flex;
+}
