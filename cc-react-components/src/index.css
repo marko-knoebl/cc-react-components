@@ -67,3 +67,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.appBarMainDiv{
+  align-self: center;
+  background-color: #1946c3;
+}

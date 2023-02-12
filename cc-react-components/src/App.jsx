@@ -1,17 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+
+import AppBar from '../components/appBar'
+
 import Alert from './components/Alert'
 import errorAlert from './assets/error.png'
 import warningAlert from './assets/warning.png'
 import infoAlert from './assets/info.png'
 import successAlert from './assets/success.png'
 
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+
+      
+      <div><AppBar /></div>
+
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -59,6 +65,7 @@ function App() {
       />
       </div>
  
+
     </div>
   )
 }
