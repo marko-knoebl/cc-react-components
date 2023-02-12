@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-
-import AppBar from '../components/appBar'
+import reactLogo from './assets/react.svg'
+import AppBar from './components/AppBar'
 
 import Alert from './components/Alert'
 import errorAlert from './assets/error.png'
@@ -11,6 +11,7 @@ import successAlert from './assets/success.png'
 
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
@@ -27,7 +28,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
+      <div className="card"> 
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
