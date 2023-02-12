@@ -17,6 +17,10 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.App {
+  width: 100%;
+  background-color: aqua;
+}
 
 @keyframes logo-spin {
   from {
@@ -39,4 +43,10 @@
 
 .read-the-docs {
   color: #888;
+}
+.appBarMainDiv{
+  align-self: center;
+  background-color: #1946c3;
+  width: "750px";
+  height: "75px";
 }
