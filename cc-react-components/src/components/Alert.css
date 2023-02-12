@@ -1,0 +1,42 @@
+.alert{
+    height:50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.alert-error{
+    background-color: rgb(253, 237, 237);
+}
+
+.alert-warning{
+    background-color: rgb(255, 244, 229);
+}
+
+.alert-info{
+    background-color: rgb(229, 246, 253);
+}
+
+.alert-success{
+    background-color:rgb(237 247 237);
+}
+
+.Alert-title-container {
+    font-weight: bold;
+    display: flex;
+    justify-content: baseline;
+}
+
+.Alert-icon {
+    height:20px;
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+.Alert-text {
+    display: flex;
+    margin-left: 10px;
+}

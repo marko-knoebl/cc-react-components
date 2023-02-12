@@ -1,12 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import reactLogo from './assets/react.svg'
+import AppBar from './components/AppBar'
+
+import Alert from './components/Alert'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+
+      
+      <div><AppBar /></div>
+
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -16,7 +24,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
+      <div className="card"> 
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -27,6 +35,30 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div className='alert-container' >
+      <Alert 
+      type={"error"}
+      title={"Error"}
+      text={"This is an error alert"}
+      />
+      <Alert 
+      type={"warning"}
+      title={"Warning"}
+      text={"This is a warning alert"}
+      />
+         <Alert 
+      type={"info"}
+      title={"Info"}
+      text={"This is an info alert"}
+      />
+         <Alert 
+      type={"success"}
+      title={"Success"}
+      text={"This is a success alert"}
+      />
+      </div>
+ 
+
     </div>
   )
 }
