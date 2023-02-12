@@ -44,9 +44,17 @@
 .read-the-docs {
   color: #888;
 }
+
 .appBarMainDiv{
   align-self: center;
   background-color: #1946c3;
   width: "750px";
   height: "75px";
+
+
+.alert-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }
