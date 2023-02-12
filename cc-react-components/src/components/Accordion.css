@@ -1,0 +1,29 @@
+.Accordion {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.Accordion__Button {
+  border: none;
+  background: none;
+}
+
+.Accordion__Title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px;
+  padding: 8px;
+}
+
+.Accordion__Summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eeeeee;
+}
+
+.Accordion__Content {
+  padding: 8px;
+}

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import reactLogo from './assets/react.svg';
 import AppBar from './components/AppBar';
-
+import Accordion from './components/Accordion';
 import Alert from './components/Alert';
 import Badge from './components/Badge';
 
@@ -16,26 +15,25 @@ function App() {
 			</div>
 			<Badge value={count}></Badge>
 
-			<div>
-				<a href='https://vitejs.dev' target='_blank'>
-					<img src='/vite.svg' className='logo' alt='Vite logo' />
-				</a>
-				<a href='https://reactjs.org' target='_blank'>
-					<img src={reactLogo} className='logo react' alt='React logo' />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
 			<div className='card'>
 				<button onClick={() => setCount((count) => count + 1)}>
 					count is {count}
 				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
 			</div>
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
+
+			<h2>Accordion</h2>
+			<Accordion title="accordion with configurable content">
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br/>
+				Sapiente magnam voluptatem veritatis quaerat eaque quae exercitationem porro facilis tempore eos!<br/>
+				Suscipit obcaecati repellendus corrupti dolorem molestias corporis quaerat mollitia qui.
+			</Accordion>
+			<Accordion title="another accordion">
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br/>
+				Sapiente magnam voluptatem veritatis quaerat eaque quae exercitationem porro facilis tempore eos!<br/>
+				Suscipit obcaecati repellendus corrupti dolorem molestias corporis quaerat mollitia qui.
+			</Accordion>
+
+			<h2>Alert</h2>
 			<div className='alert-container'>
 				<Alert type={'error'} title={'Error'} text={'This is an error alert'} />
 				<Alert
