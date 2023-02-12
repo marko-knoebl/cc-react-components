@@ -3,11 +3,11 @@ import "./Alert.css";
 function Alert(props) {
   return (
     <div className={`alert alert-${props.type}`}>
-      <div className="title-container">
-        <img className="icon" src={`../src/assets/${props.type}.png`} />
+      <div className="Alert-title-container">
+        <img className="Alert-icon" src={`../src/assets/${props.type}.png`} />
         {props.title}
       </div>
-      <div className="text">{props.text}</div>
+      <div className="Alert-text">{props.text}</div>
     </div>
   );
 }
