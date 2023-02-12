@@ -1,19 +1,16 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import React from "react";
 
 function BasicExample() {
 	return (
-		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="holder.js/100px180" />
-			<Card.Body>
-				<Card.Title>Card Title</Card.Title>
-				<Card.Text>
-					Some quick example text to build on the card title and make up the
-					bulk of the card's content.
-				</Card.Text>
-				<Button variant="primary">Go somewhere</Button>
-			</Card.Body>
-		</Card>
+		<div className="whole-card">
+			<div className="card-header">
+				<h1>This is the card title</h1>
+			</div>
+			<div className="card-body">
+				<p> Lorem Ipsum</p>
+				<button>Click here to go somewhere</button>
+			</div>
+		</div>
 	);
 }
 
