@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
+import Paper from "./components/Paper"
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -80,6 +81,9 @@ function App() {
       <div className="chip">
         <Chip />
       </div>
+
+      <h2>Paper</h2>
+      <Paper props={"this is a Paper component"}/>
     </div>
   );
 }
