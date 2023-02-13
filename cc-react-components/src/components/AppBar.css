@@ -1,0 +1,52 @@
+.appBarMainDiv {
+  display: flex;
+  background-color: #1946c3;
+  width: 100%;
+  height: 75px;
+  justify-content: flex-end;
+}
+.container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: #ffffff;
+}
+.name {
+  margin-left: 10px;
+}
+.logo {
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 55px;
+}
+.innerLayerForMenu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+  color: white;
+}
+.menuItems {
+  justify-content: flex-start;
+  display: flex;
+}
+.search {
+  justify-content: flex-end;
+  display: flex;
+  width: 200px;
+  height: 35px;
+  margin-right: auto;
+}
+.dropDownUl {
+  width: 100px;
+  background-color: #aaaaff;
+  list-style: none;
+}
+.menuItem {
+  margin-right: 20px;
+}
+.fa-caret-down {
+  margin-top: 27px;
+  margin-right: 20px;
+  color: rgb(255, 255, 255);
+}
