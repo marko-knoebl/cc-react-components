@@ -22,10 +22,11 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="appBar">
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
+					name = {"COMPANY"}
         />
       </div>
       <Badge value={count}></Badge>
