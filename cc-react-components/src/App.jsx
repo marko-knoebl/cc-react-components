@@ -78,7 +78,7 @@ function App() {
       <Avatar props={"john doe"}/>
 
       <h2>Paper</h2>
-      <Paper/>
+      <Paper props={"this is a Paper component"}/>
     </div>
   );
 }
