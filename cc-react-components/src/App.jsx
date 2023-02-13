@@ -4,6 +4,7 @@ import AppBar from "./components/AppBar";
 import Accordion from "./components/Accordion";
 import Alert from "./components/Alert";
 import Badge from "./components/Badge";
+import Avatar from "./components/Avatar";
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -71,6 +72,8 @@ function App() {
           text={"This is a success alert"}
         />
       </div>
+      <h2>Avatar</h2>
+      <Avatar props={"john doe"}/>
     </div>
   );
 }
