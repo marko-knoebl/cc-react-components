@@ -5,6 +5,7 @@ import Accordion from "./components/Accordion";
 import Alert from "./components/Alert";
 import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
+import Paper from "./components/Paper"
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -75,6 +76,9 @@ function App() {
       </div>
       <h2>Avatar</h2>
       <Avatar props={"john doe"}/>
+
+      <h2>Paper</h2>
+      <Paper/>
     </div>
   );
 }
