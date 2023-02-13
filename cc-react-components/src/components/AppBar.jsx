@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AppBar.css";
 export default function AppBar({ menuItems, dropdownMenuItems }) {
-  
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropDown = () => {
@@ -33,8 +32,7 @@ export default function AppBar({ menuItems, dropdownMenuItems }) {
           </p>
           <div className="fa-caret-down" onClick={toggleDropDown}>
             ☰
-            {dropdownOpen && (
-              <div>
+              <div className={`popUpList-${dropdownOpen}`}>
                 <ul className="dropDownUl">
                   {dropdownMenuItems.map((menuItem) => (
                     <li key={menuItem.id} className="menuItem">
@@ -43,7 +41,7 @@ export default function AppBar({ menuItems, dropdownMenuItems }) {
                   ))}
                 </ul>
               </div>
-            )}
+                    
           </div>
         </div>
       </div>
