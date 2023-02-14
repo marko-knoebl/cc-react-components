@@ -1,7 +1,6 @@
-.avatar {
+.Avatar_avatar {
     display: flex;
     border-radius: 100%;
-    background-color: rgb(6, 128, 168);
     width: 50px;
     height: 50px;
     padding: 5px;
@@ -9,7 +8,7 @@
     justify-content: center;
   }
   
-  .text {
+  .Avatar_avatar-text {
     font-size: 30px;
     color: white;
   }
