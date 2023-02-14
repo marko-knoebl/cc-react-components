@@ -4,6 +4,7 @@
   width: 100%;
   height: 75px;
   justify-content: flex-end;
+  box-shadow: 1px 1px 18px 10px rgb(167, 167, 167);
 }
 .container {
   display: flex;
@@ -11,10 +12,10 @@
   margin-left: 20px;
   color: #ffffff;
 }
-.name {
+.AppBar__name {
   margin-left: 10px;
 }
-.logo {
+.AppBar__logo {
   margin-left: 25px;
   margin-right: 25px;
   height: 55px;
@@ -30,7 +31,7 @@
   justify-content: flex-start;
   display: flex;
 }
-.search {
+.AppBar__search {
   justify-content: flex-end;
   display: flex;
   width: 200px;

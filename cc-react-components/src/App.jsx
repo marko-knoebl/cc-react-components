@@ -26,7 +26,7 @@ function App() {
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
-					name = {"COMPANY"}
+					appName = {"COMPANY"}
         />
       </div>
       <Badge value={count}></Badge>
