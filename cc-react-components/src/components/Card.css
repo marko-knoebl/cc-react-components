@@ -1,6 +1,8 @@
 .whole-card {
 	width: 20vw;
 	height: 20vh;
+	z-index: 300;
+	position: absolute;
 }
 
 .card-header {
