@@ -86,27 +86,6 @@ function App() {
 				/>
 			</div>
 			<h2>Avatar</h2>
-			<Avatar props={"john doe"} />
-			<h2>Chip</h2>
-			<div className="chip">
-				<Chip />
-			</div>
-			<h2>Alert</h2>
-			<div className="alert-container">
-				<Alert type={"error"} title={"Error"} text={"This is an error alert"} />
-				<Alert
-					type={"warning"}
-					title={"Warning"}
-					text={"This is a warning alert"}
-				/>
-				<Alert type={"info"} title={"Info"} text={"This is an info alert"} />
-				<Alert
-					type={"success"}
-					title={"Success"}
-					text={"This is a success alert"}
-				/>
-			</div>
-			<h2>Avatar</h2>
 			<Avatar avatarName={"john doe"} />
 			<h2>Chip</h2>
 			{textsOfChip.map((textofchip) => (
