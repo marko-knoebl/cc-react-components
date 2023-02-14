@@ -1,0 +1,15 @@
+.Rating {
+  padding: 8px;
+}
+
+.Rating_Star {
+  font-size: 24px;
+}
+
+.Rating_Star-Full {
+  color: gold;
+}
+
+.Rating_Star-Empty {
+  color: grey;
+}
