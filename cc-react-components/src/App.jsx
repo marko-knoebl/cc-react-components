@@ -7,6 +7,7 @@ import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
 import Paper from "./components/Paper";
+import Card from "./components/Card";
 import FloatingActionButton from "./components/FloatingActionButton";
 
 const menuItems = [
@@ -93,8 +94,10 @@ function App() {
           text={"This is a success alert"}
         />
       </div>
+
       <h2>Avatar</h2>
       <Avatar avatarName={"john doe"} />
+      
       <h2>Chip</h2>
       {textsOfChip.map((textofchip) => (
         <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
