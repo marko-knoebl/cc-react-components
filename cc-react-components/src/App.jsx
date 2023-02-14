@@ -6,7 +6,8 @@ import Alert from "./components/Alert";
 import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
-import Paper from "./components/Paper"
+import Paper from "./components/Paper";
+import FloatingActionButton from "./components/FloatingActionButton";
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -20,18 +21,27 @@ const dropdownMenuItems = [
   { id: 3, name: "Sign in", url: "/#" },
 ];
 
-
 function App() {
   const [count, setCount] = useState(0);
 
-const [textsOfChip, setTextOfChips] = useState([
-  { id: 1, text: "Delete"},
-  {id: 2, text: "Add"}
-]);
+  const [textsOfChip, setTextOfChips] = useState([
+    { id: 1, text: "Delete" },
+    { id: 2, text: "Add" },
+  ]);
 
-function deleteChip(id) {
-  setTextOfChips(textsOfChip.filter((chip) => chip.id !== id))
-} 
+  function deleteChip(id) {
+    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
+  }
+
+
+// Floating Action Button
+  const [FAB1clicked, FAB1setClicked] = useState("click");
+  const [FAB2clicked, FAB2setClicked] = useState("click");
+
+  function FABdisplayClicked(stateIs, stateShouldBe) {
+    stateIs === "click" ? stateShouldBe("click!!!") :stateShouldBe("click");
+  }
+
 
   return (
     <div className="App">
@@ -39,7 +49,7 @@ function deleteChip(id) {
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
-					name = {"COMPANY"}
+          name={"COMPANY"}
         />
       </div>
       <Badge value={count}></Badge>
@@ -86,14 +96,29 @@ function deleteChip(id) {
         />
       </div>
       <h2>Avatar</h2>
-      <Avatar avatarName={"john doe"}/>
+      <Avatar avatarName={"john doe"} />
       <h2>Chip</h2>
-        {textsOfChip.map((textofchip) => 
-        (<Chip id = {textofchip.id} onPress = {() => deleteChip(textofchip.id)}>{textofchip.text}</Chip>)
-        )}
+      {textsOfChip.map((textofchip) => (
+        <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
+          {textofchip.text}
+        </Chip>
+      ))}
 
       <h2>Paper</h2>
-      <Paper props={"this is a Paper component"}/>
+      <Paper props={"this is a Paper component"} />
+
+
+      <h2>Floating Action Button</h2>
+      <FloatingActionButton
+        buttonName={"❀"}
+        FloatingActionButtonClicked={FAB1clicked}
+        showResult={() => FABdisplayClicked(FAB1clicked, FAB1setClicked)}
+      />
+      <FloatingActionButton
+        buttonName={"This is a floating button!"}
+        FloatingActionButtonClicked={FAB2clicked}
+        showResult={() => FABdisplayClicked(FAB2clicked, FAB2setClicked)}
+      />
     </div>
   );
 }
