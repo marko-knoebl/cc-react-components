@@ -6,7 +6,8 @@ import Alert from "./components/Alert";
 import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
-import Paper from "./components/Paper"
+import Paper from "./components/Paper";
+import Switch from "./components/Switch";
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -20,18 +21,36 @@ const dropdownMenuItems = [
   { id: 3, name: "Sign in", url: "/#" },
 ];
 
-
 function App() {
   const [count, setCount] = useState(0);
 
-const [textsOfChip, setTextOfChips] = useState([
-  { id: 1, text: "Delete"},
-  {id: 2, text: "Add"}
-]);
+  const [textsOfChip, setTextOfChips] = useState([
+    { id: 1, text: "Delete" },
+    { id: 2, text: "Add" },
+  ]);
 
-function deleteChip(id) {
-  setTextOfChips(textsOfChip.filter((chip) => chip.id !== id))
-} 
+  const [switchButtons, setSwitchButtons] = useState([
+    { id: 1, text: "ON", className: "Switch-red" },
+    { id: 2, text: "OFF", className: "Switch-blue" },
+  ]);
+
+  function deleteChip(id) {
+    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
+  }
+
+  function changeButton(id) {
+    setSwitchButtons(
+      switchButtons.map((button) => {
+        if (button.id === id) {
+          return button.text === "ON"
+            ? { ...button, className: "Switch-blue", text: "OFF" }
+            : { ...button, className: "Switch-red", text: "ON" };
+        } else {
+          return button;
+        }
+      })
+    );
+  }
 
   return (
     <div className="App">
@@ -39,7 +58,7 @@ function deleteChip(id) {
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
-					name = {"COMPANY"}
+          name={"COMPANY"}
         />
       </div>
       <Badge value={count}></Badge>
@@ -86,14 +105,29 @@ function deleteChip(id) {
         />
       </div>
       <h2>Avatar</h2>
-      <Avatar props={"john doe"}/>
+      <Avatar props={"john doe"} />
       <h2>Chip</h2>
-        {textsOfChip.map((textofchip) => 
-        (<Chip id = {textofchip.id} onPress = {() => deleteChip(textofchip.id)}>{textofchip.text}</Chip>)
-        )}
+      {textsOfChip.map((textofchip) => (
+        <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
+          {textofchip.text}
+        </Chip>
+      ))}
 
       <h2>Paper</h2>
-      <Paper props={"this is a Paper component"}/>
+      <Paper props={"this is a Paper component"} />
+
+      <h3>Switch</h3>
+      {switchButtons.map((button) => (
+        <Switch
+          id={button.id}
+          classOfButton={button.className}
+          onPress={() => {
+            changeButton(button.id);
+          }}
+        >
+          {button.text}
+        </Switch>
+      ))}
     </div>
   );
 }
