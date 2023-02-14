@@ -33,15 +33,13 @@ function App() {
     setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
   }
 
-
-// Floating Action Button
+  // Floating Action Button
   const [FAB1clicked, FAB1setClicked] = useState("click");
   const [FAB2clicked, FAB2setClicked] = useState("click");
 
   function FABdisplayClicked(stateIs, stateShouldBe) {
-    stateIs === "click" ? stateShouldBe("click!!!") :stateShouldBe("click");
+    stateIs === "click" ? stateShouldBe("click!!!") : stateShouldBe("click");
   }
-
 
   return (
     <div className="App">
@@ -106,7 +104,10 @@ function App() {
 
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"} />
-
+      <div>
+        <h2>Card</h2>
+        <Card>This is supposed to be the card content</Card>
+      </div>
 
       <h2>Floating Action Button</h2>
       <FloatingActionButton
