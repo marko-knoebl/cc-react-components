@@ -20,8 +20,18 @@ const dropdownMenuItems = [
   { id: 3, name: "Sign in", url: "/#" },
 ];
 
+
 function App() {
   const [count, setCount] = useState(0);
+
+const [textsOfChip, setTextOfChips] = useState([
+  { id: 1, text: "Delete"},
+  {id: 2, text: "Add"}
+]);
+
+function deleteChip(id) {
+  setTextOfChips(textsOfChip.filter((chip) => chip.id !== id))
+} 
 
   return (
     <div className="App">
@@ -78,9 +88,9 @@ function App() {
       <h2>Avatar</h2>
       <Avatar avatarName={"john doe"}/>
       <h2>Chip</h2>
-      <div className="chip">
-        <Chip />
-      </div>
+        {textsOfChip.map((textofchip) => 
+        (<Chip id = {textofchip.id} onPress = {() => deleteChip(textofchip.id)}>{textofchip.text}</Chip>)
+        )}
 
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"}/>
