@@ -76,7 +76,7 @@ function App() {
         />
       </div>
       <h2>Avatar</h2>
-      <Avatar props={"john doe"}/>
+      <Avatar avatarName={"john doe"}/>
       <h2>Chip</h2>
       <div className="chip">
         <Chip />
