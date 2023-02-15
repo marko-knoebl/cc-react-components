@@ -6,7 +6,8 @@ import Alert from "./components/Alert";
 import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
-import Paper from "./components/Paper"
+import Paper from "./components/Paper";
+import Dialog from "./components/Dialog";
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -22,6 +23,21 @@ const dropdownMenuItems = [
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
+
+  function handleCloseDialog() {
+    setIsOpen(false);
+  }
+
+  function showDialog() {
+    return (
+      <Dialog 
+        alert={"you have at least 10 unread messages. you have to read them"}
+        isOpen={isOpen}
+        onClose={handleCloseDialog}
+      ></Dialog>
+    );
+  }
 
   return (
     <div className="App">
@@ -29,15 +45,16 @@ function App() {
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
-					appName = {"COMPANY"}
+          appName={"COMPANY"}
         />
       </div>
       <Badge value={count}></Badge>
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1, setIsOpen(true))}>
           count is {count}
         </button>
+        {count > 10 && showDialog()}
       </div>
 
       <h2>Accordion</h2>
@@ -76,14 +93,14 @@ function App() {
         />
       </div>
       <h2>Avatar</h2>
-      <Avatar props={"john doe"}/>
+      <Avatar props={"john doe"} />
       <h2>Chip</h2>
       <div className="chip">
         <Chip />
       </div>
 
       <h2>Paper</h2>
-      <Paper props={"this is a Paper component"}/>
+      <Paper props={"this is a Paper component"} />
     </div>
   );
 }
