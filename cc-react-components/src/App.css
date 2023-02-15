@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
 
 .AppBar__logo {
@@ -21,51 +21,51 @@
 }
 
 .App {
-  width: 100%;
-  background-color: aqua;
+	width: 100%;
+	background-color: aqua;
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+	a:nth-of-type(2) .logo {
+		animation: logo-spin infinite 20s linear;
+	}
 }
 
 .card {
-  padding: 2em;
+	padding: 2em;
 }
 
 .read-the-docs {
-  color: #888;
+	color: #888;
 }
 
 .appBarMainDiv {
-  align-self: center;
-  background-color: #1946c3;
-  width: "750px";
-  height: "75px";
+	align-self: center;
+	background-color: #1946c3;
+	width: "750px";
+	height: "75px";
 }
 .alert-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 .appBar {
 	border-radius: 60%;
-	border: 10px #1946c3 ;
+	border: 10px #1946c3;
 }
 
 .chip {
-  display: flex;
-  justify-content: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+	display: flex;
+	justify-content: center;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

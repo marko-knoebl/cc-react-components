@@ -8,6 +8,9 @@ import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
 import Paper from "./components/Paper";
 import Dialog from "./components/Dialog";
+import Card from "./components/Card";
+import FloatingActionButton from "./components/FloatingActionButton";
+
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -39,6 +42,23 @@ function App() {
     );
   }
 
+  const [textsOfChip, setTextOfChips] = useState([
+    { id: 1, text: "Delete" },
+    { id: 2, text: "Add" },
+  ]);
+
+  function deleteChip(id) {
+    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
+  }
+
+  // Floating Action Button
+  const [FAB1clicked, FAB1setClicked] = useState("click");
+  const [FAB2clicked, FAB2setClicked] = useState("click");
+
+  function FABdisplayClicked(stateIs, stateShouldBe) {
+    stateIs === "click" ? stateShouldBe("click!!!") : stateShouldBe("click");
+  }
+
   return (
     <div className="App">
       <div className="appBar">
@@ -46,6 +66,7 @@ function App() {
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
           appName={"COMPANY"}
+
         />
       </div>
       <Badge value={count}></Badge>
@@ -92,15 +113,36 @@ function App() {
           text={"This is a success alert"}
         />
       </div>
+
       <h2>Avatar</h2>
-      <Avatar props={"john doe"} />
-      <h2>Chip</h2>
-      <div className="chip">
-        <Chip />
-      </div>
+
+      <Avatar avatarName={"john doe"} />
+            <h2>Chip</h2>
+      {textsOfChip.map((textofchip) => (
+        <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
+          {textofchip.text}
+        </Chip>
+      ))}
 
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"} />
+
+      <div>
+        <h2>Card</h2>
+        <Card>This is supposed to be the card content</Card>
+      </div>
+
+      <h2>Floating Action Button</h2>
+      <FloatingActionButton
+        buttonName={"❀"}
+        FloatingActionButtonClicked={FAB1clicked}
+        showResult={() => FABdisplayClicked(FAB1clicked, FAB1setClicked)}
+      />
+      <FloatingActionButton
+        buttonName={"This is a floating button!"}
+        FloatingActionButtonClicked={FAB2clicked}
+        showResult={() => FABdisplayClicked(FAB2clicked, FAB2setClicked)}
+      />
     </div>
   );
 }
