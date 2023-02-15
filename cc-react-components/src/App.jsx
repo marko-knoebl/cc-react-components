@@ -9,6 +9,7 @@ import Chip from "./components/Chip";
 import Paper from "./components/Paper";
 import Card from "./components/Card";
 import FloatingActionButton from "./components/FloatingActionButton";
+import Checkbox from "./components/Checkbox";
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -40,6 +41,14 @@ function App() {
 
   function FABdisplayClicked(stateIs, stateShouldBe) {
     stateIs === "click" ? stateShouldBe("click!!!") : stateShouldBe("click");
+  }
+
+  function changeChecked() {
+    if(isChecked === false) {
+      isChecked = true
+    } else if(isChecked === true) {
+      isChecked = false
+    }
   }
 
   return (
@@ -123,6 +132,10 @@ function App() {
         FloatingActionButtonClicked={FAB2clicked}
         showResult={() => FABdisplayClicked(FAB2clicked, FAB2setClicked)}
       />
+        <h2>Checkbox</h2>
+      <Checkbox
+      isChecked={"false"}
+      onPress={(isChecked) => changeChecked(isChecked)}/>
     </div>
   );
 }
