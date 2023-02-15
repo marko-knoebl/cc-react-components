@@ -81,23 +81,15 @@ function App() {
 
       <h2>Alert</h2>
       <div className="alert-container">
-        <Alert type={"error"} title={"Error"} text={"This is an error alert"} />
-        <Alert
-          type={"warning"}
-          title={"Warning"}
-          text={"This is a warning alert"}
-        />
-        <Alert type={"info"} title={"Info"} text={"This is an info alert"} />
-        <Alert
-          type={"success"}
-          title={"Success"}
-          text={"This is a success alert"}
-        />
+        <Alert type={"error"} title={"Error"} />
+        <Alert type={"warning"} title={"Warning"} />
+        <Alert type={"info"} title={"Info"} />
+        <Alert type={"success"} title={"Success"} />
       </div>
 
       <h2>Avatar</h2>
       <Avatar avatarName={"john doe"} />
-      
+
       <h2>Chip</h2>
       {textsOfChip.map((textofchip) => (
         <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
