@@ -1,0 +1,7 @@
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 3px hotpink;
+  }
+
+input[type="checkbox"] {
+    box-shadow: 0 0 0 3px yellow;
+}

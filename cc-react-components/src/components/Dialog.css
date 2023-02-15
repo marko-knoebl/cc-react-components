@@ -1,0 +1,6 @@
+.open{
+  display: flex;
+}
+.closed{
+  display: none;
+}
