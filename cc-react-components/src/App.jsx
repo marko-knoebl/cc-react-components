@@ -34,7 +34,8 @@ function App() {
 		setIsOpen(false);
 	}
 
-<<<<<<< HEAD
+
+
   function showDialog() {
     return (
       <Dialog
@@ -44,17 +45,8 @@ function App() {
       ></Dialog>
     );
   }
-=======
-	function showDialog() {
-		return (
-			<Dialog
-				alert={"you have at least 10 unread messages. you have to read them"}
-				isOpen={isOpen}
-				onClose={handleCloseDialog}
-			></Dialog>
-		);
-	}
->>>>>>> 66ebb9e6e191de80bdaedbb295004dafa013b393
+
+
 
 	const [textsOfChip, setTextOfChips] = useState([
 		{ id: 1, text: "Delete" },
@@ -111,6 +103,8 @@ function App() {
 				/>
 			</div>
 			<Badge value={count}></Badge>
+			<Badge value={69}>😏</Badge>
+
 
 			<div className="card">
 				<Button
