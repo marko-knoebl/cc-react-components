@@ -1,7 +1,10 @@
 input[type="checkbox"]:checked {
-    box-shadow: 0 0 0 3px hotpink;
+    accent-color: cornflowerblue;
   }
 
 input[type="checkbox"] {
-    box-shadow: 0 0 0 3px yellow;
+    box-shadow: 0px 0px 20px rgb(37, 37, 37);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
