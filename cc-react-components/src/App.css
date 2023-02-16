@@ -1,5 +1,4 @@
 #root {
-<<<<<<< HEAD
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
@@ -52,7 +51,6 @@
 	width: '750px';
 	height: '75px';
 }
-=======
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -70,7 +68,6 @@
   height: "75px";
 }
 
->>>>>>> 917992485cbda6f2b2d191eacdfa763b13769529
 .alert-container {
 	display: flex;
 	flex-direction: column;
