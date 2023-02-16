@@ -69,3 +69,9 @@
 	justify-content: center;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.badge-image {
+	position: absolute;
+	height: 3rem;
+	width: 3rem;
+}
