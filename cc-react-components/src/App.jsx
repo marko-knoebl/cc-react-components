@@ -7,9 +7,12 @@ import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
 import Paper from "./components/Paper";
+import Switch from "./components/Switch";
 import Dialog from "./components/Dialog";
 import Card from "./components/Card";
 import FloatingActionButton from "./components/FloatingActionButton";
+import Checkbox from "./components/Checkbox";
+import Button from "./components/Button";
 
 
 const menuItems = [
@@ -47,6 +50,27 @@ function App() {
     { id: 2, text: "Add" },
   ]);
 
+  const [switchButtons, setSwitchButtons] = useState([
+    { id: 1, text: "ON", className: "Switch-red" },
+    { id: 2, text: "OFF", className: "Switch-blue" },
+  ]);
+
+ 
+
+  function changeButton(id) {
+    setSwitchButtons(
+      switchButtons.map((button) => {
+        if (button.id === id) {
+          return button.text === "ON"
+            ? { ...button, className: "Switch-blue", text: "OFF" }
+            : { ...button, className: "Switch-red", text: "ON" };
+        } else {
+          return button;
+        }
+      })
+    );
+  }
+
   function deleteChip(id) {
     setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
   }
@@ -59,12 +83,21 @@ function App() {
     stateIs === "click" ? stateShouldBe("click!!!") : stateShouldBe("click");
   }
 
+  function changeChecked() {
+    if(isChecked === false) {
+      isChecked = true
+    } else if(isChecked === true) {
+      isChecked = false
+    }
+  }
+
   return (
     <div className="App">
       <div className="appBar">
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
+          name={"COMPANY"}
           appName={"COMPANY"}
 
         />
@@ -72,9 +105,12 @@ function App() {
       <Badge value={count}></Badge>
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1, setIsOpen(true))}>
+        <Button
+          onClick={() => setCount((count) => count + 1, setIsOpen(true))}
+          size="large"
+        >
           count is {count}
-        </button>
+        </Button>
         {count > 10 && showDialog()}
       </div>
 
@@ -100,32 +136,42 @@ function App() {
 
       <h2>Alert</h2>
       <div className="alert-container">
-        <Alert type={"error"} title={"Error"} text={"This is an error alert"} />
-        <Alert
-          type={"warning"}
-          title={"Warning"}
-          text={"This is a warning alert"}
-        />
-        <Alert type={"info"} title={"Info"} text={"This is an info alert"} />
-        <Alert
-          type={"success"}
-          title={"Success"}
-          text={"This is a success alert"}
-        />
+        <Alert type={"error"} title={"Error"} />
+        <Alert type={"warning"} title={"Warning"} />
+        <Alert type={"info"} title={"Info"} />
+        <Alert type={"success"} title={"Success"} />
       </div>
 
-      <h2>Avatar</h2>
+        <h2>Avatar</h2>
+      <Avatar avatarName={"john doe"} />  
 
-      <Avatar avatarName={"john doe"} />
-            <h2>Chip</h2>
+
+      <h2>Chip</h2>
+      <div>
       {textsOfChip.map((textofchip) => (
         <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
           {textofchip.text}
         </Chip>
       ))}
+      </div>
 
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"} />
+
+      <h3>Switch</h3>
+      <div>
+      {switchButtons.map((button) => (
+        <Switch
+          id={button.id}
+          classOfButton={button.className}
+          onPress={() => {
+            changeButton(button.id);
+          }}
+        >
+          {button.text}
+        </Switch>
+      ))}
+      </div>
 
       <div>
         <h2>Card</h2>
@@ -143,6 +189,12 @@ function App() {
         FloatingActionButtonClicked={FAB2clicked}
         showResult={() => FABdisplayClicked(FAB2clicked, FAB2setClicked)}
       />
+        <h2>Checkbox</h2>
+      <Checkbox
+      isChecked={"false"}
+      onPress={(isChecked) => changeChecked(isChecked)}/>
+      <h2>Button</h2>
+      <Button>foo</Button>
     </div>
   );
 }
