@@ -34,7 +34,7 @@ function App() {
 
   function showDialog() {
     return (
-      <Dialog 
+      <Dialog
         alert={"you have at least 10 unread messages. you have to read them"}
         isOpen={isOpen}
         onClose={handleCloseDialog}
