@@ -43,6 +43,7 @@ function App() {
 				/>
 			</div>
 			<Badge value={count}></Badge>
+			<Badge value={4}>✨</Badge>
 
 			<div className="card">
 				<button onClick={() => setCount((count) => count + 1)}>
