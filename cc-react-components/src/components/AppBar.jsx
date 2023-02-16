@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-export default function AppBar() {
+import "./AppBar.css";
+export default function AppBar({ appName, menuItems, dropdownMenuItems }) {
   const [dropdownOpen, setDropdownOpen] = useState(true);
 
   const toggleDropDown = () => {
@@ -8,76 +8,44 @@ export default function AppBar() {
   };
 
   return (
-    <div
-      className="appBarMainDiv"
-      style={{
-        display: "flex",
-        backgroundColor: "#1946c3",
-        width: "850px",
-        height: "75px",
-        justifyContent: "flex-end" 
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          marginLeft: "20px",
-          color: "white",
-        }}
-      >
-        <h3 style={{ marginLeft: "10px" }}>Name</h3>
-        <img
-          src={"../images/logo.png"}
-          style={{ marginLeft: "25px", marginRight: "25px", height: "55px" }}
-          alt="Logo"
-        />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          marginRight: "20px",
-          color: "white",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginRight: "20px",
-          }}
-        >
-          <div style={{ justifyContent: "flex-start" , display: "flex" }}>
-            <p style={{ marginRight: "20px" }}>Home</p>
-            <p style={{ marginRight: "20px" }}>Products</p>
-            <p style={{ marginRight: "20px" }}>Pricing</p>
-            <p style={{ marginRight: "20px" }}>Blog</p>
-          </div>
+    <>
+      <div className="appBarMainDiv">
+        <div className="container">
+          <h3 className="AppBar__name">{appName}</h3>
+          <img src={"../images/logo.png"} className="AppBar__logo" alt="Logo" />
+        </div>
+        <div className="innerLayerForMenu">
           <div>
-            <p style={{ marginRight: "20px" }}>
-              <i className="fa fa-caret-down" />
-            </p>
-            <div onClick={toggleDropDown}>
-            ☰ 
-
-              {dropdownOpen && (
-          <ul style={{ listStyle: "none" }}>
-            <li><a href="#">Galerie</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">...</a></li>
-          </ul>
-        )}
+            <div className="menuItems">
+              {menuItems.map((menuItem) => (
+                <p key={menuItem.id} className="menuItem">
+                  <a href={menuItem.url}>{menuItem.name}</a>
+                </p>
+              ))}
             </div>
           </div>
+          <input className="AppBar__search" type="text" placeholder="search..." />
         </div>
-        <input
-          type="text"
-          placeholder="Search..."
-          style={{ justifyContent: "flex-end" , display: "flex", width: "200px", height: "35px", marginRight: "auto" }}
-        />
+        <div>
+          <p>
+            <i />
+          </p>
+          <nav>
+          <div className="fa-caret-down" onClick={toggleDropDown}>
+            ☰
+              <div className={`popUpList-${dropdownOpen}`}>
+                <ul className="dropDownUl">
+                  {dropdownMenuItems.map((menuItem) => (
+                    <li key={menuItem.id} className="menuItem">
+                      <a className="AppBar__link" href={menuItem.url}>{menuItem.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>  
+          </div>
+          </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
