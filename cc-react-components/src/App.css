@@ -5,6 +5,29 @@
 	text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.AppBar__logo {
+	height: 6em;
+	padding: 1.5em;
+	will-change: filter;
+	transition: filter 300ms;
+}
+
+.AppBar__logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.AppBar__logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.App {
+	width: 100%;
+	background-color: aqua;
+}
+
+>>>>>>> c6fe100518993cff12eb1e3fc4341f25e7bba635
 @keyframes logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -31,8 +54,8 @@
 .appBarMainDiv {
 	align-self: center;
 	background-color: #1946c3;
-	width: "750px";
-	height: "75px";
+	width: '750px';
+	height: '75px';
 }
 .alert-container {
 	display: flex;
@@ -43,5 +66,11 @@
 .chip {
 	display: flex;
 	justify-content: center;
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.badge-image {
+	position: absolute;
+	height: 3rem;
+	width: 3rem;
 }
