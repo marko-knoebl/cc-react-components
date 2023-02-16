@@ -99,6 +99,7 @@ function App() {
 				/>
 			</div>
 			<Badge value={count}></Badge>
+			<Badge value={69}>😏</Badge>
 
 			<div className="card">
 				<Button
