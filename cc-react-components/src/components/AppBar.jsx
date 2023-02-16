@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AppBar.css";
-export default function AppBar({ menuItems, dropdownMenuItems }) {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+export default function AppBar({ appName, menuItems, dropdownMenuItems }) {
+  const [dropdownOpen, setDropdownOpen] = useState(true);
 
   const toggleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -11,8 +11,8 @@ export default function AppBar({ menuItems, dropdownMenuItems }) {
     <>
       <div className="appBarMainDiv">
         <div className="container">
-          <h3 className="name">Name</h3>
-          <img src={"../images/logo.png"} className="logo" alt="Logo" />
+          <h3 className="AppBar__name">{appName}</h3>
+          <img src={"../images/logo.png"} className="AppBar__logo" alt="Logo" />
         </div>
         <div className="innerLayerForMenu">
           <div>
@@ -24,25 +24,26 @@ export default function AppBar({ menuItems, dropdownMenuItems }) {
               ))}
             </div>
           </div>
-          <input className="search" type="text" placeholder="search..." />
+          <input className="AppBar__search" type="text" placeholder="search..." />
         </div>
         <div>
           <p>
             <i />
           </p>
+          <nav>
           <div className="fa-caret-down" onClick={toggleDropDown}>
             ☰
               <div className={`popUpList-${dropdownOpen}`}>
                 <ul className="dropDownUl">
                   {dropdownMenuItems.map((menuItem) => (
                     <li key={menuItem.id} className="menuItem">
-                      <a href={menuItem.url}>{menuItem.name}</a>
+                      <a className="AppBar__link" href={menuItem.url}>{menuItem.name}</a>
                     </li>
                   ))}
                 </ul>
-              </div>
-                    
+              </div>  
           </div>
+          </nav>
         </div>
       </div>
     </>

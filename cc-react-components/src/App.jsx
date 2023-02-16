@@ -8,6 +8,12 @@ import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
 import Paper from "./components/Paper";
 import Switch from "./components/Switch";
+import Dialog from "./components/Dialog";
+import Card from "./components/Card";
+import FloatingActionButton from "./components/FloatingActionButton";
+import Checkbox from "./components/Checkbox";
+import Button from "./components/Button";
+
 
 const menuItems = [
   { id: 1, name: "Home", url: "/home" },
@@ -23,6 +29,26 @@ const dropdownMenuItems = [
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
+
+  function handleCloseDialog() {
+    setIsOpen(false);
+  }
+
+  function showDialog() {
+    return (
+      <Dialog 
+        alert={"you have at least 10 unread messages. you have to read them"}
+        isOpen={isOpen}
+        onClose={handleCloseDialog}
+      ></Dialog>
+    );
+  }
+
+  const [textsOfChip, setTextOfChips] = useState([
+    { id: 1, text: "Delete" },
+    { id: 2, text: "Add" },
+  ]);
 
   const [textsOfChip, setTextOfChips] = useState([
     { id: 1, text: "Delete" },
@@ -50,6 +76,24 @@ function App() {
         }
       })
     );
+  function deleteChip(id) {
+    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
+  }
+
+  // Floating Action Button
+  const [FAB1clicked, FAB1setClicked] = useState("click");
+  const [FAB2clicked, FAB2setClicked] = useState("click");
+
+  function FABdisplayClicked(stateIs, stateShouldBe) {
+    stateIs === "click" ? stateShouldBe("click!!!") : stateShouldBe("click");
+  }
+
+  function changeChecked() {
+    if(isChecked === false) {
+      isChecked = true
+    } else if(isChecked === true) {
+      isChecked = false
+    }
   }
 
   return (
@@ -59,14 +103,20 @@ function App() {
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
           name={"COMPANY"}
+          appName={"COMPANY"}
+
         />
       </div>
       <Badge value={count}></Badge>
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <Button
+          onClick={() => setCount((count) => count + 1, setIsOpen(true))}
+          size="large"
+        >
           count is {count}
-        </button>
+        </Button>
+        {count > 10 && showDialog()}
       </div>
 
       <h2>Accordion</h2>
@@ -91,22 +141,23 @@ function App() {
 
       <h2>Alert</h2>
       <div className="alert-container">
-        <Alert type={"error"} title={"Error"} text={"This is an error alert"} />
-        <Alert
-          type={"warning"}
-          title={"Warning"}
-          text={"This is a warning alert"}
-        />
-        <Alert type={"info"} title={"Info"} text={"This is an info alert"} />
-        <Alert
-          type={"success"}
-          title={"Success"}
-          text={"This is a success alert"}
-        />
+        <Alert type={"error"} title={"Error"} />
+        <Alert type={"warning"} title={"Warning"} />
+        <Alert type={"info"} title={"Info"} />
+        <Alert type={"success"} title={"Success"} />
       </div>
+
       <h2>Avatar</h2>
       <Avatar props={"john doe"} />
       <h2>Chip</h2>
+
+      <Avatar avatarName={"john doe"} />
+
+
+      <h2>Chip</h2>
+
+            <h2>Chip</h2>
+
       {textsOfChip.map((textofchip) => (
         <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
           {textofchip.text}
@@ -128,6 +179,28 @@ function App() {
           {button.text}
         </Switch>
       ))}
+      <div>
+        <h2>Card</h2>
+        <Card>This is supposed to be the card content</Card>
+      </div>
+
+      <h2>Floating Action Button</h2>
+      <FloatingActionButton
+        buttonName={"❀"}
+        FloatingActionButtonClicked={FAB1clicked}
+        showResult={() => FABdisplayClicked(FAB1clicked, FAB1setClicked)}
+      />
+      <FloatingActionButton
+        buttonName={"This is a floating button!"}
+        FloatingActionButtonClicked={FAB2clicked}
+        showResult={() => FABdisplayClicked(FAB2clicked, FAB2setClicked)}
+      />
+        <h2>Checkbox</h2>
+      <Checkbox
+      isChecked={"false"}
+      onPress={(isChecked) => changeChecked(isChecked)}/>
+      <h2>Button</h2>
+      <Button>foo</Button>
     </div>
   );
 }
