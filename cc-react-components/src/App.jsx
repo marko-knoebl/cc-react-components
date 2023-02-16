@@ -142,9 +142,8 @@ function App() {
         <Alert type={"success"} title={"Success"} />
       </div>
 
-     {/*  <h2>Avatar</h2>
-      <Avatar props={"john doe"} />
-      <Avatar avatarName={"john doe"} /> */}
+        <h2>Avatar</h2>
+      <Avatar avatarName={"john doe"} />  
 
 
       <h2>Chip</h2>
