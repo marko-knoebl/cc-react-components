@@ -11,6 +11,7 @@ import Dialog from "./components/Dialog";
 import Card from "./components/Card";
 import FloatingActionButton from "./components/FloatingActionButton";
 import Checkbox from "./components/Checkbox";
+import Button from "./components/Button";
 
 
 const menuItems = [
@@ -81,9 +82,9 @@ function App() {
       <Badge value={count}></Badge>
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1, setIsOpen(true))}>
+        <Button onClick={() => setCount((count) => count + 1, setIsOpen(true))}>
           count is {count}
-        </button>
+        </Button>
         {count > 10 && showDialog()}
       </div>
 
@@ -153,6 +154,8 @@ function App() {
       <Checkbox
       isChecked={"false"}
       onPress={(isChecked) => changeChecked(isChecked)}/>
+      <h2>Button</h2>
+      <Button>foo</Button>
     </div>
   );
 }
