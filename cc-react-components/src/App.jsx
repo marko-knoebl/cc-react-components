@@ -7,6 +7,7 @@ import Badge from "./components/Badge";
 import Avatar from "./components/Avatar";
 import Chip from "./components/Chip";
 import Paper from "./components/Paper";
+import Switch from "./components/Switch";
 import Dialog from "./components/Dialog";
 import Card from "./components/Card";
 import FloatingActionButton from "./components/FloatingActionButton";
@@ -49,6 +50,32 @@ function App() {
     { id: 2, text: "Add" },
   ]);
 
+  const [textsOfChip, setTextOfChips] = useState([
+    { id: 1, text: "Delete" },
+    { id: 2, text: "Add" },
+  ]);
+
+  const [switchButtons, setSwitchButtons] = useState([
+    { id: 1, text: "ON", className: "Switch-red" },
+    { id: 2, text: "OFF", className: "Switch-blue" },
+  ]);
+
+  function deleteChip(id) {
+    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
+  }
+
+  function changeButton(id) {
+    setSwitchButtons(
+      switchButtons.map((button) => {
+        if (button.id === id) {
+          return button.text === "ON"
+            ? { ...button, className: "Switch-blue", text: "OFF" }
+            : { ...button, className: "Switch-red", text: "ON" };
+        } else {
+          return button;
+        }
+      })
+    );
   function deleteChip(id) {
     setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
   }
@@ -75,6 +102,7 @@ function App() {
         <AppBar
           menuItems={menuItems}
           dropdownMenuItems={dropdownMenuItems}
+          name={"COMPANY"}
           appName={"COMPANY"}
 
         />
@@ -120,6 +148,8 @@ function App() {
       </div>
 
       <h2>Avatar</h2>
+      <Avatar props={"john doe"} />
+      <h2>Chip</h2>
 
       <Avatar avatarName={"john doe"} />
 
@@ -137,6 +167,18 @@ function App() {
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"} />
 
+      <h3>Switch</h3>
+      {switchButtons.map((button) => (
+        <Switch
+          id={button.id}
+          classOfButton={button.className}
+          onPress={() => {
+            changeButton(button.id);
+          }}
+        >
+          {button.text}
+        </Switch>
+      ))}
       <div>
         <h2>Card</h2>
         <Card>This is supposed to be the card content</Card>
