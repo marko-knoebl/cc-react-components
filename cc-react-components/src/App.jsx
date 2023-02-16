@@ -82,7 +82,10 @@ function App() {
       <Badge value={count}></Badge>
 
       <div className="card">
-        <Button onClick={() => setCount((count) => count + 1, setIsOpen(true))}>
+        <Button
+          onClick={() => setCount((count) => count + 1, setIsOpen(true))}
+          size="large"
+        >
           count is {count}
         </Button>
         {count > 10 && showDialog()}
