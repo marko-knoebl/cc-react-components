@@ -1,5 +1,7 @@
 import './Badge.css';
 import React, { Children } from 'react';
+import './Badge.css';
+import React from 'react';
 
 const Badge = ({ children, value }) => {
 	return (

@@ -3,8 +3,6 @@
 }
 
 .bubble {
-	margin-top: 5px;
-	margin-left: 26px;
 	height: 1.1em;
 	width: 1.1em;
 	background-color: gold;
@@ -23,4 +21,5 @@
 .badge-container {
 	position: relative;
 	display: flex;
+	padding: 0;
 }
