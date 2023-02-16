@@ -50,19 +50,12 @@ function App() {
     { id: 2, text: "Add" },
   ]);
 
-  const [textsOfChip, setTextOfChips] = useState([
-    { id: 1, text: "Delete" },
-    { id: 2, text: "Add" },
-  ]);
-
   const [switchButtons, setSwitchButtons] = useState([
     { id: 1, text: "ON", className: "Switch-red" },
     { id: 2, text: "OFF", className: "Switch-blue" },
   ]);
 
-  function deleteChip(id) {
-    setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
-  }
+ 
 
   function changeButton(id) {
     setSwitchButtons(
@@ -76,6 +69,8 @@ function App() {
         }
       })
     );
+  }
+
   function deleteChip(id) {
     setTextOfChips(textsOfChip.filter((chip) => chip.id !== id));
   }
@@ -147,27 +142,25 @@ function App() {
         <Alert type={"success"} title={"Success"} />
       </div>
 
-      <h2>Avatar</h2>
+     {/*  <h2>Avatar</h2>
       <Avatar props={"john doe"} />
-      <h2>Chip</h2>
-
-      <Avatar avatarName={"john doe"} />
+      <Avatar avatarName={"john doe"} /> */}
 
 
       <h2>Chip</h2>
-
-            <h2>Chip</h2>
-
+      <div>
       {textsOfChip.map((textofchip) => (
         <Chip id={textofchip.id} onPress={() => deleteChip(textofchip.id)}>
           {textofchip.text}
         </Chip>
       ))}
+      </div>
 
       <h2>Paper</h2>
       <Paper props={"this is a Paper component"} />
 
       <h3>Switch</h3>
+      <div>
       {switchButtons.map((button) => (
         <Switch
           id={button.id}
@@ -179,6 +172,8 @@ function App() {
           {button.text}
         </Switch>
       ))}
+      </div>
+
       <div>
         <h2>Card</h2>
         <Card>This is supposed to be the card content</Card>
