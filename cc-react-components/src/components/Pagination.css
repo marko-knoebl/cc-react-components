@@ -1,0 +1,25 @@
+.pages-bar {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+#next,
+#previous {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.page-number {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem;
+	width: 2rem;
+	height: 2rem;
+}
+
+.page-number-active,
+.page-number:hover {
+	background-color: #aaabad;
+}
